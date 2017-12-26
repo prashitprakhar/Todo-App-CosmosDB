@@ -1,0 +1,30 @@
+{
+  "name": "todoappcosmosdb",
+  "version": "1.0.0",
+  "description": "todo app cosmosdb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prashitprakhar/Todo-App-CosmosDB.git"
+  },
+  "keywords": [
+    "todoapp",
+    "cosmosdb"
+  ],
+  "author": "Prashit Prakhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prashitprakhar/Todo-App-CosmosDB/issues"
+  },
+  "homepage": "https://github.com/prashitprakhar/Todo-App-CosmosDB#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "documentdb": "^1.14.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "url": "^0.11.0"
+  }
+}
