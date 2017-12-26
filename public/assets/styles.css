@@ -1,0 +1,6 @@
+body{background: skyblue; font-family: verdana; color: #fff; padding: 30px;}
+h1{font-size: 42px; text-transform: uppercase; letter-spacing: 2px; text-align: center;}
+h3{font-size: 26px; text-transform: lowercase; letter-spacing: 2px; text-align: center;}
+h2{font-size:30px; letter-spacing: 1px;}
+ul{font-size:20px; letter-spacing: 1px;}
+div{background: black; padding: 30px};
