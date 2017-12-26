@@ -23,10 +23,23 @@ module.exports = function(app){
         //console.log(req.body);
         const doc = {
             "stuff" : req.body
-        }
+        };
+
+        createDocumentData.createDocument(doc);
+         const allResultsReloaded = getAllData.queryCollection();
+           allResultsReloaded.toArray( (err, results) => {
+                if(err) throw err;
+                //console.log(results);
+                res.render('index', {todoItems: results});
+            })
+
+            
+        });
+
+
         //const createdOutput = createDocumentData.createDocument(doc);
         
-            var createdNewStuff = new Promise( (resolve, reject) => { 
+         /*   var createdNewStuff = new Promise( (resolve, reject) => { 
                 
                 var promiseForCreation = createDocumentData.createDocument(doc);
                 if(err) reject(err);
@@ -40,8 +53,6 @@ module.exports = function(app){
             console.log(results);
             res.render('index', {todoItems: results});
        
-        }));
-
-});
+        })); */
 
 };
