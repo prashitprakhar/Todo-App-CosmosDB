@@ -9,20 +9,24 @@ const collectionUrl = `${databaseUrl}/colls/${config.collection.id}`;
 
 module.exports.createDocument = function(document){
 
-    const documentUrl = `${collectionUrl}/docs/${document.id}`;
-    const completionMessage = client.readDocument(documentUrl, { partitionKey: document.district }, (err, result) => {
-        if (err) {
-            if (err.code == HttpStatusCodes.NOTFOUND) {
-                client.createDocument(collectionUrl, document, (err, created) => {
-                    if (err) return err;
-                    else return created;
-                });
+    let documentUrl = `${collectionUrl}/docs/${document.id}`;
+    console.log(`Getting document:\n${document.id}\n`);
+
+    return new Promise((resolve, reject) => {
+        client.readDocument(documentUrl, { partitionKey: document.district }, (err, result) => {
+            if (err) {
+                if (err.code == HttpStatusCodes.NOTFOUND) {
+                    client.createDocument(collectionUrl, document, (err, created) => {
+                        if (err) reject(err)
+                        else resolve(created);
+                    });
+                } else {
+                    reject(err);
+                }
             } else {
-                return err;
+                resolve(result);
             }
-        } else {
-            return result;
-        }
+        });
     });
 
 };
