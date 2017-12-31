@@ -20,18 +20,34 @@ module.exports = function(app){
     }); 
 
     app.post('/', urlEncodedParser, function(req, res){
-        //console.log(req.body);
-        const doc = {
-            "stuff" : req.body
+       const reqBody = req.body;
+       let doc = {
+            "stuff" : reqBody
         };
 
-        createDocumentData.createDocument(doc);
-         const allResultsReloaded = getAllData.queryCollection();
+        console.log(doc.id);
+
+        createDocumentData.createDocument(doc)
+        .then(() => {
+                const allResultsReloaded = getAllData.queryCollection();
+                allResultsReloaded.toArray( (err, results) => {
+                if(err) throw err;
+                    console.log(results);
+                res.render('index', {todoItems: results});
+            })
+        
+        
+        //queryCollection()
+    }).catch((error) => {
+        throw error;
+           // console.log("Some Error Occured");
+        });
+      /*   const allResultsReloaded = getAllData.queryCollection();
            allResultsReloaded.toArray( (err, results) => {
                 if(err) throw err;
                 //console.log(results);
                 res.render('index', {todoItems: results});
-            })
+            })  */
 
             
         });
