@@ -9,7 +9,7 @@ const createDocumentData = require('../model/createDocument');
 
 const urlEncodedParser = bodyParser.urlencoded({extended: false});
 
-const authObj = require("./auth").Create({
+const authObj = require("./auth.js").Create({
     tenant:"prashitprakharoutlook.onmicrosoft.com",
     clientId:"506c0d73-57ab-4e09-8561-670024326020",
     secret:"D1z3FuoWo3E/aSuXZ6T0ojCQ5SQRq7G3FDezEdnNp+8=",
