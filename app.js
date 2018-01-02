@@ -8,6 +8,10 @@ var cookieSession = require('cookie-session');
 const controllertodo = require('./controller/controllertodo');
 const app = express();
 
+//Using Cookie Parsers
+app.use(cookieParser('a deep secret'));
+app.use(cookieSession({name: 'session',keys: [""]}));
+
 //Setting View Engine as EJS
 app.set('view engine', 'ejs');
 
