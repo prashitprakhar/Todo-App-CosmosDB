@@ -14,7 +14,8 @@ const authObj = require("./auth.js").Create({
     clientId:"506c0d73-57ab-4e09-8561-670024326020",
     secret:"D1z3FuoWo3E/aSuXZ6T0ojCQ5SQRq7G3FDezEdnNp+8=",
     //redirectUri:"http://localhost:3000/getAToken"
-    redirectUri:"http://localhost:3000/getAuthToken"
+    //redirectUri:"http://localhost:3000/getAuthToken"
+    redirectUri: "https://todoappinnode.azurewebsites.net/home"
 });
 
 //Receiving app.js functionalities
