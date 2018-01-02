@@ -40,7 +40,7 @@ module.exports = function(app){
         });
     });
 
-    app.get('/getAuthToken', function(req, res) {
+    app.get('/home', function(req, res) {
         authObj.receiveToken(req,res,function(){
             res.redirect('/index');
         });
