@@ -24,6 +24,6 @@ app.use(express.static('./public'));
 controllertodo(app);
 
 //Listening to port
-app.listen(process.env.port || 3000);
-console.log("Listening to Port 3000");
+app.listen(process.env.port || 3001);
+console.log("Listening to Port 3001");
 
