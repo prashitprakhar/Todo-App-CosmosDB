@@ -15,8 +15,9 @@ const authObj = require("./auth.js").Create({
     secret:"D1z3FuoWo3E/aSuXZ6T0ojCQ5SQRq7G3FDezEdnNp+8=",
     //redirectUri:"http://localhost:3000/getAToken"
     //redirectUri:"http://localhost:3000/getAuthToken"
-    redirectUri: "https://todoappinnode.azurewebsites.net/home"
+    redirectUri: "http://localhost:3001/home"
 });
+
 
 //Receiving app.js functionalities
 module.exports = function(app){
@@ -71,7 +72,7 @@ module.exports = function(app){
                 const allResultsReloaded = getAllData.queryCollection();
                 allResultsReloaded.toArray( (err, results) => {
                 if(err) throw err;
-                    console.log(results);
+                    //console.log(results);
                 res.render('index', {todoItems: results});
             })
         
